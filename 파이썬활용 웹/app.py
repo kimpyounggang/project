@@ -61,7 +61,6 @@ def login():
 
 
 #검색한 주소가 데이터베이스 안에 있는지 검증한다.
-#검증하는 이유는 머신러닝으로 넘기기전, 사용할 수 있는 주소데이터인지 확인하기 위함.
 @app.route("/login_done", methods=["get"])
 def login_done():
     uid = request.args.get("id") #html에서 입력창을 통해"id"를 받아온다(읍면동)
