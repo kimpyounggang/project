@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block message %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+{% if messages %}
+    <p>{{messages}}</p>
+{% endif %}
+{% endwith %}
+{% endblock message %}
+
+{%  block contents %}
+<form action="{{url_for("signin_done")}}" method="get">
+    <p>!!!!!!!!!!!!!!!!!!!!관리자전용 페이지입니다!!!!!!!!!!!!!!!!!!!</p>
+    <p>주소 등록창</p>
+    <input type="text" name="id" id="id">
+<!--    <input type="text" name="pwd" id="pwd"> -->
+
+    <button type="submit">입력</button>>
+
+</form>
+
+{% endblock contents %}

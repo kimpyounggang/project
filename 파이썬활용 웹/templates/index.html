@@ -1,0 +1,56 @@
+{% extends "base.html" %}{% block user %}{%  if user == "Login" %}{% else %}
+<p>입력하신 주소: </p>
+<p><span style="border-bottom: 8px solid #dcf1fb; padding: 0 0 0 0.2em; font-size:1.5em;"><a href = "{{ url_for('firefight', uid=user)}}">{{ user }}</a></span></p>
+<p>(▲▲▲▲입력하신 주소를 클릭하면 가장 가까운 소방서 지도로 이동!)</p>
+<form action="{{url_for('login_done')}}" method="get"><p>검색하실 주소를 입력하세요!(예시)_ㅁㅁ동)</p><input type="text" name="id" id="id"><button type="submit">주소검색</button></form>
+
+ <p><span style="border-radius: 5em; padding: 0.6em 1em; background: #F9F9F9; box-shadow: 1px 2px 10px rgba(0,0,0,0.2);  margin-left: 5px;"><a href = "{{url_for('user_posts', uid=user)}}"> 입력한 주소의 재산피해 예측결과 조회 </a></span></p>
+<!--<br>
+<p><span style="border-radius: 5em; padding: 0.6em 1em; background: #F9F9F9; box-shadow: 1px 2px 10px rgba(0,0,0,0.2);  margin-left: 5px;"><a href = "{{url_for('post_list')}}"> 모든 주소의 재산피해 예측결과 조회</a></span></p>
+   <br>
+
+
+<!--
+<p><span style="border-radius: 5em; padding: 0.6em 1em; background: #F9F9F9; box-shadow: 1px 2px 10px rgba(0,0,0,0.2);  margin-left: 5px;"><a href = "{{ url_for('logout') }}">주소 입력창으로 이동</a></span></p>
+    <br>
+
+
+<p>사용법: [주소가 입력된 상태]에서 클릭시 -> [주소가 입력되지 않았습니다] </p>
+<p>[주소가 입력되지 않았습니다.] 상태에서 클릭시 -> 주소 입력창이 나옵니다!</p>
+
+<a href="https://map.kakao.com/link/search/{{user}}" target="_blank">{{ user }}</a></span></p>
+<p>(▲▲▲▲입력하신 주소를 클릭하면 해당 읍면동 기준 지도로 이동!)</p>
+
+--
+
+
+   
+    <br>
+    <br>
+    <a>!!!!!!!하단은 관리자 전용 기능!!!!!!!!데이터 작성뒤 삭제예정)</a>
+    <br>
+    (만든이유.. 파이어베이스에서 데이터를 넣는것보다 웹에서 파이어베이스로 넣는게 쉬움..ㅠㅠ)
+    <br>
+    <a href = "{{ url_for('write')}}">데이터 작성하기</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href = "{{ url_for('fire_2016')}}">csv확인하는코드</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href = "{{ url_for('firefight', uid=user)}}">csv확인</a>
+    <br>
+    <br>
+    <br>
+
+    {% endif %}
+  <!--  <a href="{{ url_for('post_list') }}">포스트리스트</a> -->
+{% endblock user %}
+
+{% block contents %}
+
+{% endblock contents %}

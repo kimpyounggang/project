@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% block user %}{% endblock user %}{% block contents %}
+
+<p><span style="border-bottom: 8px solid #dcf1fb; padding: 0 0 0 0.2em; font-size:1.5em;"><a href = "{{ url_for('firefight', uid=uid)}}">{{ uid }}</a></span></p>
+<p>(▲▲▲▲입력하신 주소를 클릭하면 가장 가까운 소방서 지도로 이동!)</p>
+
+<img src="https://ifh.cc/g/LBuEKQ.png"width="1000",height="500"><!--읍면동별 화재소계-->
+<img src="https://ifh.cc/g/Ep2ZfG.png"width="250",height="250"><!--화재유형별 화재소계--><img src="https://ifh.cc/g/woY7di.png"width="600",height="300"><!--화재원인별 화재소계-->
+
+{% if length == 0 %}
+<p>데이터가 없습니다.</p>{% else %}{% for post in post_list %}<a href="{{url_for('post', pid=post[0]) }}">
+    <div>{{ post[1].id}}  :   {{ post[1].title}} [ {{ post[1].contents}} ]</div></a>{% endfor %}
+
+
+
+
+
+
+
+
+  
+ {% endif %}
+{% endblock contents %}
