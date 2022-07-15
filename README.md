@@ -8,4 +8,4 @@
 
 # project/파이썬 활용 웹 : 파이썬 기반에서 제작한 웹사이트.
 
-# project/ipynb : 학부시절 머신러닝 연습
+# project/ipynb : 머신러닝 연습
